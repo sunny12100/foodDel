@@ -10,7 +10,7 @@ import VerifyPay from "./pages/VerifyPay";
 import MyOrders from "./pages/MyOrders";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Admin from "./pages/admin/admin";
+import Admin from "./pages/admin/Admin";
 import Add from "./pages/admin/Add";
 import Sidebar from "./pages/admin/Sidebar";
 import List from "./pages/admin/List";
