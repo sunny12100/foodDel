@@ -2,7 +2,13 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="h-[50vh] md:h-[34vw] my-6 mx-auto bg-[url('header_img.png')]  bg-no-repeat bg-cover relative">
+    <div
+      className="h-[50vh] md:h-[34vw] my-6 mx-auto   bg-no-repeat bg-cover relative"
+      style={{
+        backgroundImage:
+          "url('https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591')",
+      }}
+    >
       <div className="absolute flex flex-col items-start gap-4 md:gap-[1.5vw] max-w-[90%] md:max-w-[50%] bottom-[10%] left-[5%] md:left-[6vw] animate-fadeIn">
         <h2 className="font-medium font-sans text-[6vw] md:text-[3.5vw] text-white">
           Craving Something Delicious? Order Now!

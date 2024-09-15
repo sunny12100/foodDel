@@ -70,7 +70,7 @@ const Navbar = ({ setShowLogin, setIsAdmin }) => {
           isMobileMenuOpen
             ? "fixed inset-0 bg-white flex flex-col items-center justify-center z-50"
             : "hidden"
-        } md:flex gap-5 md:h-12 list-none text-[#49557e] text-xl`}
+        } md:flex gap-2 md:gap-8 md:h-12 list-none text-[#49557e] text-xl`}
       >
         {!toggle && (
           <Link
@@ -136,72 +136,93 @@ const Navbar = ({ setShowLogin, setIsAdmin }) => {
             contact-us
           </a>
         )}
-      </ul>
 
-      {/* Search, Basket, and Sign In (hidden on mobile) */}
-      <div className="hidden md:flex md:gap-5 gap-10 items-center">
-        <div className="relative">
-          {!toggle && (
-            <Link to="/cart">
-              <img src={assets.basket_icon} alt="Basket" />
-              <div
-                className={
-                  getTotalAmount()
-                    ? "absolute w-3 h-3 bg-orange-500 rounded-full top-[-8px] right-[-8px]"
-                    : ""
-                }
-              ></div>
-            </Link>
-          )}
-        </div>
-        <div>
-          {admin && (
-            <Link to={toggle ? "/" : "/admin"}>
+        {/* Search, Basket, and Sign In (hidden on mobile) */}
+        <div className=" md:flex md:gap-5 md:ml-48 gap-10 items-center">
+          <div className="relative ml-10 md:ml-0">
+            {!toggle && (
+              <Link
+                to="/cart"
+                onClick={() => {
+                  setMenu("cart");
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                <img src={assets.basket_icon} alt="Basket" />
+                <div
+                  className={
+                    getTotalAmount()
+                      ? "absolute w-3 h-3 bg-orange-500 rounded-full top-[-8px] right-[-8px]"
+                      : ""
+                  }
+                ></div>
+              </Link>
+            )}
+          </div>
+          <div className="mt-8 md:mt-0">
+            {admin && (
+              <Link
+                to={toggle ? "/" : "/admin"}
+                onClick={() => {
+                  setMenu("Admin");
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                <button
+                  onClick={ToggleButton}
+                  className="bg-transparent text-xl text-[#49557e] border border-orange-600 rounded-full cursor-pointer py-3 px-8 hover:bg-orange-500 hover:text-white duration-300"
+                >
+                  {toggle ? "Home" : "Admin"}
+                </button>
+              </Link>
+            )}
+          </div>
+          <div>
+            {token === "" ? (
               <button
-                onClick={ToggleButton}
+                onClick={() => {
+                  setShowLogin(true);
+                  setMenu("Sign In");
+                  setIsMobileMenuOpen(false);
+                }}
                 className="bg-transparent text-xl text-[#49557e] border border-orange-600 rounded-full cursor-pointer py-3 px-8 hover:bg-orange-500 hover:text-white duration-300"
               >
-                {toggle ? "Home" : "Admin"}
+                Sign In
               </button>
-            </Link>
-          )}
+            ) : (
+              <div className="relative group ">
+                <img
+                  className="ml-4 md:ml-0 w-20"
+                  src="https://t3.ftcdn.net/jpg/05/80/14/34/360_F_580143471_oizmWtW0ewHj9bUCYBzQlzPnqOxxSRVK.png"
+                  alt=""
+                />
+                <ul className="absolute mr-[-55px] md:mr-0 right-0 hidden z-10 group-hover:flex flex-row md:flex-col gap-3 bg-[#fff2ef] py-3 px-7 w-64  md:w-36 rounded-lg border-[1px] border-orange-500">
+                  <li
+                    onClick={() => {
+                      navigate("/myorder");
+
+                      setMenu("My Orders");
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="flex items-center gap-2 cursor-pointer hover:text-orange-500"
+                  >
+                    <img src={assets.bag_icon} alt="" />
+                    Orders
+                  </li>
+                  <hr className="bg-orange-500 h-[2px]" />
+                  <li
+                    onClick={logOut}
+                    className="flex items-center gap-2 cursor-pointer hover:text-orange-500"
+                  >
+                    <img src={assets.logout_icon} alt="" />
+                    LogOut
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
-        <div>
-          {token === "" ? (
-            <button
-              onClick={() => setShowLogin(true)}
-              className="bg-transparent text-xl text-[#49557e] border border-orange-600 rounded-full cursor-pointer py-3 px-8 hover:bg-orange-500 hover:text-white duration-300"
-            >
-              Sign In
-            </button>
-          ) : (
-            <div className="relative group">
-              <img
-                className="w-20"
-                src="https://t3.ftcdn.net/jpg/05/80/14/34/360_F_580143471_oizmWtW0ewHj9bUCYBzQlzPnqOxxSRVK.png"
-                alt=""
-              />
-              <ul className="absolute right-0 hidden z-10 group-hover:flex flex-col gap-3 bg-[#fff2ef] py-3 px-7 w-36 rounded-lg border-[1px] border-orange-500">
-                <li
-                  onClick={() => navigate("/myorder")}
-                  className="flex items-center gap-2 cursor-pointer hover:text-orange-500"
-                >
-                  <img src={assets.bag_icon} alt="" />
-                  Orders
-                </li>
-                <hr className="bg-orange-500 h-[2px]" />
-                <li
-                  onClick={logOut}
-                  className="flex items-center gap-2 cursor-pointer hover:text-orange-500"
-                >
-                  <img src={assets.logout_icon} alt="" />
-                  LogOut
-                </li>
-              </ul>
-            </div>
-          )}
-        </div>
-      </div>
+      </ul>
     </div>
   );
 };
