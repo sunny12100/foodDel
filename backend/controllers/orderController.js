@@ -5,7 +5,7 @@ import Stripe from "stripe";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const placeOrder = async (req, res) => {
-  const frontendUrl = "http://localhost:5173";
+  const frontendUrl = "https://fooddel-frontend-g4vh.onrender.com";
   try {
     const newOrder = new orderModel({
       userId: req.body.userId,
@@ -51,7 +51,7 @@ const placeOrder = async (req, res) => {
 const verifyOrder = async (req, res) => {
   const { orderId, success } = req.body;
   try {
-    if (success === "true") {
+    if (success) {
       await orderModel.findByIdAndUpdate(orderId, { payment: true });
       res.json({ success: true, message: "Paid" });
     } else {
