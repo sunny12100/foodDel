@@ -112,10 +112,9 @@ Bite Buddy is a modern and feature-rich food delivery app that connects users wi
 
 ---
 
-
 ## 🌐 Live Demo
 
-Try the live version of Bite Buddy: [https://bite-buddy.com](https://bite-buddy.com)
+Try the live version of Bite Buddy: [https://fooddel-frontend-g4vh.onrender.com/](https://fooddel-frontend-g4vh.onrender.com/)
 
 ---
 
