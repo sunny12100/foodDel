@@ -20,7 +20,7 @@ Bite Buddy is a modern and feature-rich food delivery app that connects users wi
 - 🔒 Secure login and registration with JWT.
 - 🌟 Admin access control with the `isAdmin` flag.
 
-![User Authentication](./images/authentication.png)
+![User Authentication](./frontend/public/1.png)
 
 ---
 
@@ -29,7 +29,7 @@ Bite Buddy is a modern and feature-rich food delivery app that connects users wi
 - 🔍 Search and filter functionality for finding dishes quickly.
 - 🖼️ Upload and display high-quality food images.
 
-![Dynamic Food Menu](./images/food-menu.png)
+![Dynamic Food Menu](./frontend/public/2.png)
 
 ---
 
@@ -37,7 +37,7 @@ Bite Buddy is a modern and feature-rich food delivery app that connects users wi
 - 📋 View past orders on the "My Orders" page.
 - 🚚 Real-time order tracking with a progress bar.
 
-![Order Management](./images/my-orders.png)
+![Order Management](./frontend/public/3.png)
 
 ---
 
@@ -45,7 +45,7 @@ Bite Buddy is a modern and feature-rich food delivery app that connects users wi
 - 🛒 Add, edit, or remove items from your cart.
 - 🧾 Display the total cost and apply promo codes.
 
-![Cart Functionality](./images/cart.png)
+![Cart Functionality](./frontend/public/4.png)
 
 ---
 
@@ -53,7 +53,7 @@ Bite Buddy is a modern and feature-rich food delivery app that connects users wi
 - 📱 Fully optimized for mobile, tablet, and desktop views.
 - 🎨 Aesthetic design with Tailwind CSS for seamless navigation.
 
-![Responsive Design](./images/responsive.png)
+![Responsive Design](./frontend/public/5.png)
 
 ---
 
@@ -61,7 +61,9 @@ Bite Buddy is a modern and feature-rich food delivery app that connects users wi
 - 🛠️ Manage food items, categories, and user roles.
 - 📊 View detailed analytics on user activities and orders.
 
-![Admin Panel](./images/admin-panel.png)
+![Admin Panel](./frontend/public/6.png)
+![Admin Panel](./frontend/public/7.png)
+
 
 ---
 
@@ -69,7 +71,7 @@ Bite Buddy is a modern and feature-rich food delivery app that connects users wi
 - 💳 Integrated with Razorpay/Stripe for secure transactions.
 - 🛡️ Multiple payment options including UPI, credit/debit cards, and wallets.
 
-![Payment Integration](./images/payment.png)
+![Payment Integration](./frontend/public/8.png)
 
 ---
 
@@ -94,9 +96,7 @@ Bite Buddy is a modern and feature-rich food delivery app that connects users wi
 
 4. Set up environment variables in a `.env` file:
    ```env
-   MONGO_URI=your_mongodb_connection_string
-   FIREBASE_API_KEY=your_firebase_api_key
-   RAZORPAY_KEY=your_razorpay_key
+   STRIPE_KEY=your_razorpay_key
    ```
 
 5. Start the development servers:
@@ -112,13 +112,6 @@ Bite Buddy is a modern and feature-rich food delivery app that connects users wi
 
 ---
 
-## 🎥 Demo
-
-Check out the video walkthrough of Bite Buddy:
-
-[![Watch Demo](./images/demo-thumbnail.png)](https://youtu.be/your-demo-video-link)
-
----
 
 ## 🌐 Live Demo
 
@@ -134,10 +127,8 @@ We welcome contributions to improve Bite Buddy! Please fork the repository and c
 
 ## 📩 Contact
 
-For inquiries or feedback, reach out to us at [support@bitebuddy.com](mailto:support@bitebuddy.com).
+For inquiries or feedback, reach out to us at [support@bitebuddy.com](mailto:chitvangupta2800@gmail.com).
 
 ---
 
-### 📜 License
 
-This project is licensed under the [MIT License](LICENSE).
